@@ -12,7 +12,9 @@ export default function Login() {
 
   const navigate= useNavigate()
 
-  const {backend_url,setisLoggedin,isLoggedin,getUserData} = useContext(AppContext)
+  const backend_url = 'https://mern-auth-r0uz.onrender.com';
+  
+  const {setisLoggedin,isLoggedin,getUserData} = useContext(AppContext)
 
   const [state, setState] = useState('Sign Up')
   const [email, setemail] = useState('')
