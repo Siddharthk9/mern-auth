@@ -11,11 +11,23 @@ const app = express()
 const port = process.env.PORT || 4000
 connectDB()
 
-const allowed = ['http://localhost:5173']
+const allowed = ['http://localhost:5173',"https://mern-auth-5-client.onrender.com"]
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:allowed,credentials:true}))
+// app.use(cors({origin:allowed,credentials:true}))
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}))
 
 app.get('/',(req,res)=>{
     res.send("Server Running")
