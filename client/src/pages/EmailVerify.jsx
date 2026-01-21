@@ -7,7 +7,10 @@ import { toast } from 'react-toastify'
 
 export default function EmailVerify() {
   axios.defaults.withCredentials=true
-  const {backend_url,isLoggedin, userData,getUserData} =useContext(AppContext)
+
+   const backend_url = 'https://mern-auth-r0uz.onrender.com'
+  
+  const {isLoggedin, userData,getUserData} =useContext(AppContext)
 
   const navigate = useNavigate()
   const inputRefs = React.useRef([])
