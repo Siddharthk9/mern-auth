@@ -14,7 +14,7 @@ export default function Navbar() {
     try {
        axios.defaults.withCredentials = true
 
-       const {data} =await axios.post(backend_url+'/api/auth/logout')
+       const {data} =await axios.post(VITE_BACKEND_URL+'/api/auth/logout')
        data.success && setisLoggedin(false)
        data.success && setuserData(false)
        navigate('/')
