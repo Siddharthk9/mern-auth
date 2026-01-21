@@ -15,8 +15,10 @@ export default function RestPassword() {
   const [otp,setotp] = useState(null)
   const [isOtpSubmitted,setisOtpSubmitted]=useState(false)
 
+  const backend_url = 'https://mern-auth-r0uz.onrender.com';
+  
   //  axios.defaults.withCredentials=true
-  const {backend_url,isLoggedin, userData,getUserData} =useContext(AppContext)
+  const {isLoggedin, userData,getUserData} =useContext(AppContext)
 
   const inputRefs = React.useRef([])
 
