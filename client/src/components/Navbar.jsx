@@ -14,7 +14,7 @@ export default function Navbar() {
     try {
        axios.defaults.withCredentials = true
 
-       const {data} =await axios.post(VITE_BACKEND_URL+'/api/auth/logout')
+       const {data} =await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`)
        data.success && setisLoggedin(false)
        data.success && setuserData(false)
        navigate('/')
@@ -30,7 +30,7 @@ export default function Navbar() {
       console.log("SendVerify OTP")
        axios.defaults.withCredentials = true
 
-       const{data} = await axios.post(backend_url+'/api/auth/send-verify-otp')
+       const{data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/send-verify-otp`)
        toast.success(data.message)
 
        if(data.success){
