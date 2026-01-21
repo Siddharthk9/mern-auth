@@ -11,7 +11,7 @@ const app = express()
 const port = process.env.PORT || 4000
 connectDB()
 
-const allowed = ['http://localhost:5173',"https://mern-auth-5-client.onrender.com"]
+const allowed = ['http://localhost:5173',"https://mern-auth-5-client.onrender.com","https://mern-auth-5-zppf.onrender.com"]
 
 app.use(express.json())
 app.use(cookieParser())
