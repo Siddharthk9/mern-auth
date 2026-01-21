@@ -14,21 +14,21 @@ const userAuth = async(req,res,next)=>{
      console.log("hello")
 
     if(tokenDecode){
-        // req.body.userID=tokenDecode.id
+        req.body.userID=tokenDecode.id
         console.log("The body is "+req.body)
 
     //      req.body= { 
     //   userID: tokenDecode.id
     // }
 
-         if(req.body==undefined){
-            req.body= { 
-      userID: tokenDecode.id
-    }
-         }
-         else{
-             req.body.userID=tokenDecode.id
-}
+//          if(req.body==undefined){
+//             req.body= { 
+//       userID: tokenDecode.id
+//     }
+//          }
+//          else{
+//              req.body.userID=tokenDecode.id
+// }
 
 
     }
